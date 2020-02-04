@@ -1,5 +1,5 @@
 package noland;
-
+//7KYU
 public class JadenCase {
     public String toJadenCase(String phrase) {
         if (phrase == "" || phrase == null) {
