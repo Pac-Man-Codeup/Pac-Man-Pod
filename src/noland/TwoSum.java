@@ -1,8 +1,7 @@
 package noland;
 //6KYU
 public class TwoSum {
-    public static int[] twoSum(int[] numbers, int target)
-    {
+    public static int[] twoSum(int[] numbers, int target) {
         int index1 = 0;
         int index2 = 0;
         for (int i = 0; i < numbers.length; i++) {
