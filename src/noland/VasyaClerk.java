@@ -1,5 +1,5 @@
 package noland;
-
+//6KYU
 public class VasyaClerk {
     public static String Tickets(int[] peopleInLine) {
         int twentyFives = 0;
