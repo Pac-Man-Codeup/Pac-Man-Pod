@@ -70,7 +70,7 @@ public class CodeWarsSolutions {
     }
     //
     //8KYU
-    public boolean isItANumber(String s) {
+    boolean isItANumber(String s) {
         s.trim();
         if (s.matches("([-][0-9]{1,})") || s.matches("([0-9]{1,})") || s.matches("([0-9]{1,}[.][0-9]{1,})") || s.matches("([-][0-9]{1,}[.][0-9]{1,})")) {
             System.out.println(s);
@@ -80,6 +80,33 @@ public class CodeWarsSolutions {
             return false;
         }
     }
-    //
+    //6KYU
+    boolean takeATenMinuteWalk(char[] walk) {
+        if (walk.length != 10) {
+            return false;
+        }
+        int north = 0;
+        int east = 0;
+        for (int i = 0; i < walk.length; i++) {
+            switch(walk[i]) {
+                case 'n':
+                    north++;
+                    break;
+                case 's':
+                    north--;
+                    break;
+                case 'e':
+                    east++;
+                    break;
+                default:
+                    east--;
+                    break;
+            }
+        }
+        if (north == 0 && east == 0) {
+            return true;
+        }
+        return false;
+    }
 
 }
