@@ -4,9 +4,9 @@ public class edabit {
     public static void main(String[] args){
 
         //#1
-        System.out.println("test1\n"+ equal(1,1,2)); //2
-        System.out.println("test2\n"+ equal(1,1,1)); //3
-        System.out.println("test3\n"+ equal(1,2,3)); //0
+        System.out.println(equal(1,1,2)); //2
+        System.out.println(equal(1,1,1)); //3
+        System.out.println(equal(1,2,3)); //0
 
         //#2
         System.out.println(canAlternate("0001111")); // true
@@ -33,7 +33,7 @@ public class edabit {
         if (a == b && b == c) {
             return 3;
         }
-        if (a ==b || a == c || b == c){
+        if (a == b || a == c || b == c){
             return 2;
         }
         return 0;
@@ -111,7 +111,7 @@ public class edabit {
             for(int i = 1; i <= n; i++){
                 if (i % 6 == 0){
                     freeCups += 1;
-                    System.out.println(i + "+" + freeCups);
+//                    System.out.println(i + "+" + freeCups);
                 }
             }
             return freeCups + n;
