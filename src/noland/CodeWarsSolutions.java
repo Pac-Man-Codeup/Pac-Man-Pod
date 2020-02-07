@@ -1,5 +1,8 @@
 package noland;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+
 public class CodeWarsSolutions {
     //6KYU
     String[] whichAreIn(String[] array1, String[] array2) {
@@ -108,5 +111,30 @@ public class CodeWarsSolutions {
         }
         return false;
     }
-
+    //6KYU
+    String duplicateEncoder(String word) {
+        String output = word.toLowerCase();
+        String[] wordArr = word.toLowerCase().split("");
+        HashMap<String, Integer> wordList = new HashMap<>();
+        for(String letter : wordArr) {
+            if (wordList.get(letter) == null) {
+                wordList.put(letter, 1);
+            } else {
+                wordList.put(letter, wordList.get(letter) + 1);
+            }
+        }
+        for(HashMap.Entry<String, Integer> entry : wordList.entrySet()) {
+            if (entry.getValue() > 1) {
+                String pattern = entry.getKey();
+                output = output.replace("" + pattern, "å");
+            } else if (entry.getValue() == 1) {
+                String pattern = entry.getKey();
+                output = output.replace("" + pattern, "ç");
+            }
+        }
+        output = output.replaceAll("å", ")");
+        output = output.replaceAll("ç", "(");
+        output = output.replaceAll("@", "");
+        return output;
+    }
 }
