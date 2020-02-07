@@ -45,10 +45,12 @@ public class edabit {
 //        if (a == b){
 //            total++;
 //            System.out.println("a=b:" + total);
-//        } else if (a == c){
+//        }
+//        if (a == c){
 //            total++;
 //            System.out.println("a=c:" + total);
-//        } else if (b == c){
+//        }
+//        if (b == c){
 //            total++;
 //            System.out.println("b=c:" + total);
 //        }
@@ -77,16 +79,16 @@ public class edabit {
             int zero = 0;
 
             for(int i = 0; i < str.length(); i++){
-                if(str.charAt(i)=='1'){
+                if(str.charAt(i) == '1'){
                     one += 1;
                 } else {
                     zero += 1;
                 }
             }
 
-            if(one==0||zero==0){
+            if(one == 0 || zero == 0){
                 return false;
-            } else if(Math.abs(zero-one) <= 1){
+            } else if(Math.abs(zero - one) <= 1){
                 return true;
             } else {
                 return false;
