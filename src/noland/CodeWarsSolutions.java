@@ -137,4 +137,20 @@ public class CodeWarsSolutions {
         output = output.replaceAll("@", "");
         return output;
     }
+    //6KYU
+    public static long playingWithDigits(int n, int p) {
+        String nStr = Integer.toString(n);
+        double output = 0;
+        for (int i = 0; i < nStr.length(); i++) {
+            output += Math.pow(Double.parseDouble(Character.toString(nStr.charAt(i))), p);
+            p++;
+        }
+        int k = 1;
+        if (output == 0 || (output / n) % 1 != 0) {
+            k = -1;
+        } else {
+            k = (int) (output / n);
+        }
+        return k;
+    }
 }
