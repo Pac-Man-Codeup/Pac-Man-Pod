@@ -34,7 +34,7 @@ class LeapYear {
         System.out.println("Enter any Year:");
         inputYear = scan.nextInt();
 
-        // evenly divisible by 4 and 100 or 400
+        // divisible by 4 and not 100 or divisible by 400
         if (((inputYear % 4 == 0) && (inputYear % 100 != 0)) || (inputYear % 400 == 0))
             System.out.format("%s year is a leap year", inputYear);
         else
