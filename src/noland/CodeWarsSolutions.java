@@ -1,5 +1,8 @@
 package noland;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+
 public class CodeWarsSolutions {
     //6KYU
     String[] whichAreIn(String[] array1, String[] array2) {
@@ -70,7 +73,7 @@ public class CodeWarsSolutions {
     }
     //
     //8KYU
-    public boolean isItANumber(String s) {
+    boolean isItANumber(String s) {
         s.trim();
         if (s.matches("([-][0-9]{1,})") || s.matches("([0-9]{1,})") || s.matches("([0-9]{1,}[.][0-9]{1,})") || s.matches("([-][0-9]{1,}[.][0-9]{1,})")) {
             System.out.println(s);
@@ -80,6 +83,74 @@ public class CodeWarsSolutions {
             return false;
         }
     }
-    //
-
+    //6KYU
+    boolean takeATenMinuteWalk(char[] walk) {
+        if (walk.length != 10) {
+            return false;
+        }
+        int north = 0;
+        int east = 0;
+        for (int i = 0; i < walk.length; i++) {
+            switch(walk[i]) {
+                case 'n':
+                    north++;
+                    break;
+                case 's':
+                    north--;
+                    break;
+                case 'e':
+                    east++;
+                    break;
+                default:
+                    east--;
+                    break;
+            }
+        }
+        if (north == 0 && east == 0) {
+            return true;
+        }
+        return false;
+    }
+    //6KYU
+    String duplicateEncoder(String word) {
+        String output = word.toLowerCase();
+        String[] wordArr = word.toLowerCase().split("");
+        HashMap<String, Integer> wordList = new HashMap<>();
+        for(String letter : wordArr) {
+            if (wordList.get(letter) == null) {
+                wordList.put(letter, 1);
+            } else {
+                wordList.put(letter, wordList.get(letter) + 1);
+            }
+        }
+        for(HashMap.Entry<String, Integer> entry : wordList.entrySet()) {
+            if (entry.getValue() > 1) {
+                String pattern = entry.getKey();
+                output = output.replace("" + pattern, "å");
+            } else if (entry.getValue() == 1) {
+                String pattern = entry.getKey();
+                output = output.replace("" + pattern, "ç");
+            }
+        }
+        output = output.replaceAll("å", ")");
+        output = output.replaceAll("ç", "(");
+        output = output.replaceAll("@", "");
+        return output;
+    }
+    //6KYU
+    public static long playingWithDigits(int n, int p) {
+        String nStr = Integer.toString(n);
+        double output = 0;
+        for (int i = 0; i < nStr.length(); i++) {
+            output += Math.pow(Double.parseDouble(Character.toString(nStr.charAt(i))), p);
+            p++;
+        }
+        int k = 1;
+        if (output == 0 || (output / n) % 1 != 0) {
+            k = -1;
+        } else {
+            k = (int) (output / n);
+        }
+        return k;
+    }
 }
