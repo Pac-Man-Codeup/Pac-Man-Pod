@@ -13,8 +13,14 @@ public class edabit {
         System.out.println(canAlternate("010011")); // true
         System.out.println(canAlternate("010001")); // false
         System.out.println(canAlternate("1111")); // false
+
+        //#3
+        System.out.println(totalCups(6)); //7
+        System.out.println(totalCups(12)); //14
+        System.out.println(totalCups(213)); //248
     }
 
+    //1
     //equality of 3 values (MEDIUM):
     //Create a function that takes three integer arguments (a, b, c) and returns the number of equal values.
     //Your function must return 0, 2 or 3.
@@ -50,6 +56,7 @@ public class edabit {
 //    }
 
 
+        //2
         //Alternating Ones and Zeroes
         //Write a function that returns true if the binary string can be rearranged to form a string of alternating 0s and 1s.
         //NOTES:
@@ -84,6 +91,28 @@ public class edabit {
             } else {
                 return false;
             }
+        }
+
+
+        //3
+        //Free Coffee Cups
+        //Per 6 coffee cups I buy, I get a 7th cup free. In total, I get 7 cups. Create a function that takes n cups bought and return as an integer the total number of cups I would get.
+        //NOTES:
+        //Number of cups I bought + number of cups I got for free.
+        //Only valid inputs will be given.
+        // EXAMPLES:
+        //totalCups(6) ➞ 7
+        //totalCups(12) ➞ 14
+        //totalCups(213) ➞ 248
+        public static int totalCups(int n) {
+            int freeCups = 0;
+            for(int i = 1; i <= n; i++){
+                if (i % 6 == 0){
+                    freeCups += 1;
+                    System.out.println(i + "+" + freeCups);
+                }
+            }
+            return freeCups + n;
         }
 
 }
