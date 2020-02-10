@@ -1,5 +1,8 @@
 package daynaLeal;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class edabit2 {
     public static void main(String[] args) {
         int[] test1 = {10, 4, 1, 4, -10, -50, 32, 21};
@@ -14,18 +17,21 @@ public class edabit2 {
     //Difference of Max and Min Numbers in Array
     //Create a function that takes an array and returns the difference between the biggest and smallest numbers.
     public static int differenceMaxMin(int[] arr) {
-        int max = 0;
+        ArrayList secondArray = new ArrayList();
+        for(int i = 0; i < arr.length; i++){
+            secondArray.add(arr[i]);
+        int max = Collections.max(arr);
         int min = 0;
 
-        for(int i = 0; i < arr.length; i++){
-            if(arr[i] > max){
-                max = arr[i];
-                System.out.println(i + ":" + max);
-            } else if(arr[i] < min || arr[i] < arr[i - 1]){
-                min = arr[i];
-                System.out.println(i + ":" + min);
-            }
-        }
+//        for(int i = 0; i < arr.length; i++){
+//            if(arr[i] > max){
+//                max = arr[i];
+//                System.out.println(i + ": max :" + max);
+//            } else if(arr[i] < min || arr[i] < arr[i - 1]){
+//                min = arr[i];
+//                System.out.println(i + ": min :" + min);
+//            }
+//        }
         return max - min;
     }
 }
