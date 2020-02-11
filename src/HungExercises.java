@@ -19,9 +19,182 @@ public class HungExercises {
 //        System.out.println(tidyNumber(212));
 //        System.out.println(remove("eloquent"));
 //        System.out.println(solution("world"));
-        System.out.println(Arrays.toString(snail(new int[][]{{1, 2, 3},
+/*        System.out.println(Arrays.toString(snail(new int[][]{{1, 2, 3},
                 {4, 5, 6},
-                {7, 8, 9}})));
+                {7, 8, 9}})));*/
+
+/*        System.out.println(sixBitNumber(""));
+        System.out.println(sixBitNumber("0"));
+        System.out.println(sixBitNumber("00"));
+        System.out.println(sixBitNumber("55"));
+        System.out.println(sixBitNumber("63"));
+        System.out.println(sixBitNumber("64"));
+        System.out.println(sixBitNumber("-0"));
+        System.out.println(sixBitNumber("-5"));
+        System.out.println(sixBitNumber("05"));
+        System.out.println(sixBitNumber("5"));*/
+
+/*        System.out.println(isVowel(""));
+        System.out.println(isVowel("a"));
+        System.out.println(isVowel("E"));
+        System.out.println(isVowel("ou"));
+        System.out.println(isVowel("z"));
+        System.out.println(isVowel("lol"));*/
+        int clues[][] = {
+                {2, 2, 1, 3,
+                        2, 2, 3, 1,
+                        1, 2, 2, 3,
+                        3, 2, 1, 3},
+
+                {0, 0, 1, 2,
+                        0, 2, 0, 0,
+                        0, 3, 0, 0,
+                        0, 1, 0, 0}
+        };
+
+
+        int outcomes[][][] = {
+                        {{1, 3, 4, 2},
+                        {4, 2, 1, 3},
+                        {3, 4, 2, 1},
+                        {2, 1, 3, 4}},
+
+                {{2, 1, 4, 3},
+                        {3, 4, 1, 2},
+                        {4, 2, 3, 1},
+                        {1, 3, 2, 4}}
+        };
+
+        int[] clue1 = {2, 2, 1, 3,
+                2, 2, 3, 1,
+                1, 2, 2, 3,
+                3, 2, 1, 3};
+//        solvePuzzle(clue1);
+    }
+
+    static int[][] solvePuzzle(int[] clues) {
+        int[][] matrix = new int[4][4];
+        // clues of 1
+        for (int i = 0; i < clues.length; i++) {
+            if (clues[i] == 1) {
+                switch (i) {
+                    case 0:
+                    case 15:
+                        matrix[0][0] = matrix.length;
+                        break;
+                    case 1:
+                        matrix[0][1] = matrix.length;
+                        break;
+                    case 2:
+                        matrix[0][2] = matrix.length;
+                        break;
+                    case 3:
+                    case 4:
+                        matrix[0][3] = matrix.length;
+                        break;
+                    case 5:
+                        matrix[1][3] = matrix.length;
+                        break;
+                    case 6:
+                        matrix[2][3] = matrix.length;
+                        break;
+                    case 7:
+                    case 8:
+                        matrix[3][3] = matrix.length;
+                        break;
+                    case 9:
+                        matrix[3][2] = matrix.length;
+                        break;
+                    case 10:
+                        matrix[3][1] = matrix.length;
+                        break;
+                    case 11:
+                    case 12:
+                        matrix[3][0] = matrix.length;
+                        break;
+                    case 13:
+                        matrix[2][0] = matrix.length;
+                        break;
+                    case 14:
+                        matrix[1][0] = matrix.length;
+                        break;
+                }
+            }
+            // clues of n -> (4)
+            if (clues[i] == matrix.length) {
+                switch (i) {
+                    case 0:
+                    case 15:
+                        matrix[0][0] = 1;
+                        break;
+                    case 1:
+                        matrix[0][1] = 1;
+                        break;
+                    case 2:
+                        matrix[0][2] = 1;
+                        break;
+                    case 3:
+                    case 4:
+                        matrix[0][3] = 1;
+                        break;
+                    case 5:
+                        matrix[1][3] = 1;
+                        break;
+                    case 6:
+                        matrix[2][3] = 1;
+                        break;
+                    case 7:
+                    case 8:
+                        matrix[3][3] = 1;
+                        break;
+                    case 9:
+                        matrix[3][2] = 1;
+                        break;
+                    case 10:
+                        matrix[3][1] = 1;
+                        break;
+                    case 11:
+                    case 12:
+                        matrix[3][0] = 1;
+                        break;
+                    case 13:
+                        matrix[2][0] = 1;
+                        break;
+                    case 14:
+                        matrix[1][0] = 1;
+                        break;
+                }
+            }
+        }
+
+//        for (int i = 0; i < )
+
+
+        for (int[] row : matrix) {
+            System.out.println("+---+---+---+---+");
+            System.out.print("| ");
+            for (int n : row) {
+                System.out.print(n + " | ");
+            }
+            System.out.println();
+        }
+        System.out.println("+---+---+---+---+");
+
+/*        for (int item : clues) {
+            System.out.println(item);
+        }*/
+        return new int[4][4];
+    }
+
+
+    public static boolean isVowel(String s) {
+        return s.matches("[aeiouAEIOU]");
+    }
+
+    /*Implement String#six_bit_number?, which should return true if given object is a number representable by 6 bit unsigned integer (0-63), false otherwise.
+    It should only accept numbers in canonical representation, so no leading +, extra 0s, spaces etc.*/
+    public static boolean sixBitNumber(String n) {
+        return n.matches("([1-5])?\\d|([1-6])[0]|([1-6])?[1-3]");
     }
 
     /*int[][] array
