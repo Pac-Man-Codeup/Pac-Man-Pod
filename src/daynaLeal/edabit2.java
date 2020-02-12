@@ -1,14 +1,22 @@
 package daynaLeal;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class edabit2 {
     public static void main(String[] args) {
+        //1
         int[] test1 = {10, 4, 1, 4, -10, -50, 32, 21};
         int[] test2 = {44, 32, 86, 19};
         System.out.println(differenceMaxMin(test1)); //82 examplest taken from edabit
         System.out.println(differenceMaxMin(test2)); //67
+
+        //2
+        String testString = "The last letters of this string will be capitalized when done";
+        System.out.println(capLast(testString));
+        System.out.println(capLast("My Name Is Edabit"));
+        System.out.println(capLast("HELp THe LASt LETTERs CAPITALISe"));
 
     }
 
@@ -31,4 +39,31 @@ public class edabit2 {
         }
         return max - min;
     }
+
+    //2
+    //Capitalize the last letter
+    //capLast("hello") ➞ "hellO"
+    //capLast("My Name Is Edabit") ➞ "MY NamE IS EdabiT"
+    //capLast("HELp THe LASt LETTERs CAPITALISe") ➞ "HELP THE LAST LETTERS CAPITALISE"
+    public static String capLast(String str) {
+        String[] stringArr = str.split(" ");
+        StringBuffer sb = new StringBuffer();
+        for(String string : stringArr){
+            int stringLength = string.length() ;
+            int stringLengthMinus1 = string.length() -1;
+//            System.out.println(string.substring(stringLengthMinus1, stringLength));
+            String lastLetter = string.substring(stringLengthMinus1, stringLength);
+//            lastLetter.toUpperCase();
+            string = string.substring(0, stringLengthMinus1) + lastLetter.toUpperCase();
+//            System.out.println(string + " ");
+//            sb.append(string + " ");
+        }
+//        String capString = sb.toString();
+//        return capString;
+        String capString = Arrays.toString(stringArr);
+        return capString;
+    }
+
 }
+
+
