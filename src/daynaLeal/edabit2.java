@@ -56,12 +56,18 @@ public class edabit2 {
 //            lastLetter.toUpperCase();
             string = string.substring(0, stringLengthMinus1) + lastLetter.toUpperCase();
 //            System.out.println(string + " ");
-//            sb.append(string + " ");
+//            if
+            sb.append(string + " ");
+            System.out.println(sb);
+            System.out.println(sb.setLength(sb.length() - 1));
+//            System.out.println(sb);
         }
+//        String capString =
+//        capString.setLength(buf.length() - 1);
 //        String capString = sb.toString();
+        return (sb.toString());
+//        String capString = Arrays.toString(stringArr);
 //        return capString;
-        String capString = Arrays.toString(stringArr);
-        return capString;
     }
 
 }
