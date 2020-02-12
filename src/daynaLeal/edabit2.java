@@ -17,21 +17,18 @@ public class edabit2 {
     //Difference of Max and Min Numbers in Array
     //Create a function that takes an array and returns the difference between the biggest and smallest numbers.
     public static int differenceMaxMin(int[] arr) {
-        ArrayList secondArray = new ArrayList();
-        for(int i = 0; i < arr.length; i++){
-            secondArray.add(arr[i]);
-        int max = Collections.max(arr);
-        int min = 0;
+        int max = arr[0];
+        int min = arr[0];
 
-//        for(int i = 0; i < arr.length; i++){
-//            if(arr[i] > max){
-//                max = arr[i];
-//                System.out.println(i + ": max :" + max);
-//            } else if(arr[i] < min || arr[i] < arr[i - 1]){
-//                min = arr[i];
-//                System.out.println(i + ": min :" + min);
-//            }
-//        }
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] > max){
+                max = arr[i];
+//                System.out.println(i + ":" + max);
+            } else if(arr[i] < min){
+                min = arr[i];
+//                System.out.println(i + ":" + min);
+            }
+        }
         return max - min;
     }
 }
