@@ -51,23 +51,14 @@ public class edabit2 {
         for(String string : stringArr){
             int stringLength = string.length() ;
             int stringLengthMinus1 = string.length() -1;
-//            System.out.println(string.substring(stringLengthMinus1, stringLength));
+
             String lastLetter = string.substring(stringLengthMinus1, stringLength);
-//            lastLetter.toUpperCase();
             string = string.substring(0, stringLengthMinus1) + lastLetter.toUpperCase();
-//            System.out.println(string + " ");
-//            if
-            sb.append(string + " ");
+            sb.append(string + " "); //to add a space between words
             System.out.println(sb);
-            System.out.println(sb.setLength(sb.length() - 1));
-//            System.out.println(sb);
         }
-//        String capString =
-//        capString.setLength(buf.length() - 1);
-//        String capString = sb.toString();
+        sb.setLength(sb.length() - 1); //to take out the added space after the last word
         return (sb.toString());
-//        String capString = Arrays.toString(stringArr);
-//        return capString;
     }
 
 }
