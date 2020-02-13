@@ -18,6 +18,13 @@ public class edabit2 {
         System.out.println(capLast("My Name Is Edabit"));
         System.out.println(capLast("HELp THe LASt LETTERs CAPITALISe"));
 
+        //3
+        System.out.println(calculator(5, '+', 6)); //11
+        System.out.println(calculator(5, '-', 6)); //-1
+        System.out.println(calculator(5, '*', 6)); //30
+        System.out.println(calculator(5, '/', 5)); //1
+        System.out.println(calculator(5, '/', 0)); //0
+
     }
 
 
