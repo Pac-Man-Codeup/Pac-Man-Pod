@@ -61,6 +61,30 @@ public class edabit2 {
         return (sb.toString());
     }
 
+
+    //3
+    //Basic calculator
+    //Create a function that takes two numbers and a mathematical operator + - / * and will perform a calculation with the given numbers.
+    //If the input tries to divide by 0, return 0.
+    // calculator(2, '+', 2) ➞ 4
+    //calculator(2, '*', 2) ➞ 4
+    //calculator(4, '/', 2) ➞ 2
+    public static int calculator(int num1, char operator, int num2) {
+        String charConverted = Character.toString(operator);
+        if(charConverted.equals("/") && num2 == 0){
+            return 0;
+        } else if (charConverted.equals("/")) {
+            return num1 / num2;
+        } else if (charConverted.equals("+")){
+            return num1 + num2;
+        } else if (charConverted.equals("-")){
+            return num1 - num2;
+        } else {
+            return num1 * num2;
+        }
+    }
+
+
 }
 
 
