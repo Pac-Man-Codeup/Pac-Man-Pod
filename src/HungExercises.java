@@ -16,8 +16,7 @@ public class HungExercises {
         System.out.println(sumDigPow(2627876, 2647441));
         /*2627876
 2647441*/
-    }
-
+    }e
     public static List<Long> sumDigPow(long a, long b) {
         long sum;
         List<Long> returnList = new ArrayList<>();

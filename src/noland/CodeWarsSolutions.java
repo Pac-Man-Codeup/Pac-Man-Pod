@@ -153,4 +153,26 @@ public class CodeWarsSolutions {
         }
         return k;
     }
+    //6KYU
+    public static int findTheParityOutlier(int[] integers){
+        int outlier = 0;
+        boolean isEven = false;
+        if(integers[0] % 2 == 0 && integers[1] % 2 == 0 || integers[1] % 2 == 0 && integers[2] % 2 == 0) {
+            isEven = true;
+        }
+        for(int num : integers) {
+            if(isEven) {
+                if(num % 2 != 0) {
+                    outlier = num;
+                    break;
+                }
+            } else {
+                if(num % 2 == 0) {
+                    outlier = num;
+                    break;
+                }
+            }
+        }
+        return outlier;
+    }
 }
