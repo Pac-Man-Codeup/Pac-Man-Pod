@@ -69,7 +69,7 @@ public class HungExercises {
                 2, 2, 3, 1,
                 1, 2, 2, 3,
                 3, 2, 1, 3};
-//        solvePuzzle(clue1);
+        solvePuzzle(clue1);
     }
 
     static int[][] solvePuzzle(int[] clues) {
