@@ -54,7 +54,11 @@ public class HungExercises {
 
 
         int outcomes[][][] = {
+<<<<<<< HEAD
                 {{1, 3, 4, 2},
+=======
+                        {{1, 3, 4, 2},
+>>>>>>> fd68fe3cfaf85f661a3f7716d7190dcaf5cb4669
                         {4, 2, 1, 3},
                         {3, 4, 2, 1},
                         {2, 1, 3, 4}},
@@ -189,6 +193,7 @@ public class HungExercises {
 
     public static boolean isVowel(String s) {
         return s.matches("[aeiouAEIOU]");
+<<<<<<< HEAD
     }
 
     /*Implement String#six_bit_number?, which should return true if given object is a number representable by 6 bit unsigned integer (0-63), false otherwise.
@@ -277,6 +282,96 @@ public class HungExercises {
         return true;
     }
 
+=======
+    }
+
+    /*Implement String#six_bit_number?, which should return true if given object is a number representable by 6 bit unsigned integer (0-63), false otherwise.
+    It should only accept numbers in canonical representation, so no leading +, extra 0s, spaces etc.*/
+    public static boolean sixBitNumber(String n) {
+        return n.matches("([1-5])?\\d|([1-6])[0]|([1-6])?[1-3]");
+    }
+
+    /*int[][] array
+                = {{1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}};
+     Answer: int[] r = {1, 2, 3, 6, 9, 8, 7, 4, 5};*/
+    /*Given an n x n array, return the array elements arranged from outermost elements to the middle element, traveling clockwise.*/
+    public static int[] snail(int[][] array) {
+        IntStream.Builder sequence = IntStream.builder();
+        int i, k = 0, l = 0;
+        int m = array.length;
+        int n = array[0].length;
+        /*  k - starting row index
+        m - ending row index
+        l - starting column index
+        n - ending column index
+        i - iterator
+        */
+        while (k < m && l < n) {
+            // Print the first row from the remaining rows
+            for (i = l; i < n; ++i) {
+                sequence.add(array[k][i]);
+            }
+            k++;
+            // Print the last column from the remaining columns
+            for (i = k; i < m; ++i) {
+                sequence.add(array[i][n - 1]);
+            }
+            n--;
+            // Print the last row from the remaining rows */
+            if (k < m) {
+                for (i = n - 1; i >= l; --i) {
+                    sequence.add(array[m - 1][i]);
+                }
+                m--;
+            }
+            // Print the first column from the remaining columns */
+            if (l < n) {
+                for (i = m - 1; i >= k; --i) {
+                    sequence.add(array[i][l]);
+                }
+                l++;
+            }
+        }
+        return sequence.build().toArray();
+    }
+
+    /*Complete the solution so that it reverses the string value passed into it.
+    Kata.solution("world") //returns "dlrow"*/
+    public static String solution(String str) {
+        return new StringBuffer(str).reverse().toString();
+    }
+
+    //    It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
+    public static String remove(String str) {
+        return str.substring(1, str.length() - 1);
+    }
+
+    //    Find the total sum of internal angles in an n-sided simple polygon. N will be greater than 2.
+//    assertEquals(AngleSum.sumOfAngles(3),180);
+//    assertEquals(AngleSum.sumOfAngles(4),360);
+    public static int sumOfAngles(int n) {
+        // (n-2) × 180° - the sum of internal angles, (n-2) × 180° / n - each angle
+        return (n - 2) * 180;
+    }
+
+
+    /*Definition
+    A Tidy number is a number whose digits are in non-decreasing order.
+    Given a number, Find if it is Tidy or not .
+    tidyNumber (12) ==> return (true)
+    */
+    public static boolean tidyNumber(int number) {
+        String[] numberArray = Integer.toString(number).split("");
+        for (int i = 0; i < numberArray.length; i++) {
+            if (i == numberArray.length - 1) break;
+            if (Integer.parseInt(numberArray[i]) > Integer.parseInt(numberArray[i + 1])) return false;
+        }
+        return true;
+    }
+
+>>>>>>> fd68fe3cfaf85f661a3f7716d7190dcaf5cb4669
     /*The number 89 is the first integer with more than one digit that fulfills the property partially introduced in the title of this kata. What's the use of saying "Eureka"? Because this sum gives the same number.
     In effect: 89 = 8^1 + 9^2
     The next number in having this property is 135.
