@@ -2,6 +2,7 @@ package noland;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class CodeWarsSolutions {
     //6KYU
@@ -175,4 +176,35 @@ public class CodeWarsSolutions {
         }
         return outlier;
     }
+    //6KYU Performance
+    //Works until it hits big data
+    public static String numericalsOfAString(String s) {
+        String[] strArr = s.split("");
+        String output = "";
+        Map<String, Integer> count = new HashMap<>();
+        for(int i = 0; i < strArr.length / 2; i++) {
+            if (count.get(strArr[i]) == null) {
+                count.put(strArr[i], 1);
+                output += count.get(strArr[i]);
+            } else {
+                count.put(strArr[i], count.get(strArr[i]) + 1);
+                output += count.get(strArr[i]);
+            }
+        }
+        for(int i = strArr.length / 2; i < strArr.length; i++) {
+            if (count.get(strArr[i]) == null) {
+                count.put(strArr[i], 1);
+                output += count.get(strArr[i]);
+            } else {
+                count.put(strArr[i], count.get(strArr[i]) + 1);
+                output += count.get(strArr[i]);
+            }
+        }
+        return output;
+    }
+//    //6KYU Counting Duplicates
+//    //Python
+//    def duplicate_count(text):
+//    text = text.lower()
+//            return len([dup for dup in set(text) if text.count(dup) > 1])
 }
