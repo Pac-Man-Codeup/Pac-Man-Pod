@@ -207,4 +207,8 @@ public class CodeWarsSolutions {
 //    def duplicate_count(text):
 //    text = text.lower()
 //            return len([dup for dup in set(text) if text.count(dup) > 1])
+//    //6KYU Array.diff
+//    //Python
+//    def array_diff(a, b):
+//                return [num for num in a if num not in b]
 }
