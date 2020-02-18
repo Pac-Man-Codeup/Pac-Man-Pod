@@ -307,4 +307,9 @@ public class CodeWarsSolutions {
 //            if elem == "False":
 //    array[i] = False
 //    return array
+    //7KYU
+    public static String disemvowelTrolls(String str) {
+        str = str.replaceAll("[aeiouAEIOU]", "");
+        return str;
+    }
 }
