@@ -1,7 +1,6 @@
 package noland;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class CodeWarsSolutions {
     //6KYU
@@ -175,4 +174,125 @@ public class CodeWarsSolutions {
         }
         return outlier;
     }
+    //6KYU Performance
+    //Works until it hits big data
+    public static String numericalsOfAString(String s) {
+        String[] strArr = s.split("");
+        String output = "";
+        Map<String, Integer> count = new HashMap<>();
+        for(int i = 0; i < strArr.length / 2; i++) {
+            if (count.get(strArr[i]) == null) {
+                count.put(strArr[i], 1);
+                output += count.get(strArr[i]);
+            } else {
+                count.put(strArr[i], count.get(strArr[i]) + 1);
+                output += count.get(strArr[i]);
+            }
+        }
+        for(int i = strArr.length / 2; i < strArr.length; i++) {
+            if (count.get(strArr[i]) == null) {
+                count.put(strArr[i], 1);
+                output += count.get(strArr[i]);
+            } else {
+                count.put(strArr[i], count.get(strArr[i]) + 1);
+                output += count.get(strArr[i]);
+            }
+        }
+        return output;
+    }
+//    //6KYU Counting Duplicates
+//    //Python
+//    def duplicate_count(text):
+//    text = text.lower()
+//            return len([dup for dup in set(text) if text.count(dup) > 1])
+//    //6KYU Array.diff
+//    //Python
+//    def array_diff(a, b):
+//                return [num for num in a if num not in b]
+
+//    //Java Continued
+//    public static boolean comp(int[] a, int[] b) {
+//        if(a == null || b == null || a.length != b.length) {
+//            return false;
+//        }
+//        Arrays.sort(a);
+//        Arrays.sort(b);
+//        int i = 0;
+//        for(int num : a) {
+//            num = num * num;
+//            if(b[i] != num) {
+//                System.out.println("i = " + i);
+//                System.out.println(b[i]);
+//                System.out.println(num);
+//                return false;
+//            }
+//            i++;
+//        }
+//        return true;
+//    }
+//    public static boolean comp(int[] a, int[] b) {
+//        if(a == null || b == null || a.length != b.length){
+//            return false;
+//        }
+//        List<Integer> bList = Arrays.stream(b).boxed().collect(Collectors.toList());
+//        for(int num : a) {
+//            num = num * num;
+//            if(bList.indexOf(num) == -1) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+    //6KYU Needs Refactor Check to MAKE SURE THIS IS THE CORRECT ONE
+    public static boolean areTheyTheSame(int[] a, int[] b) {
+        if(a == null || b == null || a.length != b.length){
+            return false;
+        }
+        for(int i = 0; i < a.length; i++) {
+            a[i] = a[i] * a[i];
+        }
+        for(int num : a) {
+            System.out.println(num);
+        }
+        for(int num : b) {
+            System.out.println(num);
+        }
+        List<Integer> aList = Arrays.stream(a).boxed().collect(Collectors.toList());
+        List<Integer> bList = Arrays.stream(b).boxed().collect(Collectors.toList());
+        for(Integer num : aList) {
+            if(!bList.contains(num)) {
+                return false;
+            }
+        }
+        for(Integer num : bList) {
+            if(!aList.contains(num)) {
+                return false;
+            }
+            aList.remove(num);
+        }
+        return true;
+    }
+    //6KYU
+    //PYTHON
+//    import re
+//    def ip_validation(strng):
+//    pattern = re.compile("^(?:(?:25[0-5]|2[0-4][0-9]|[1]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[1]?[0-9][0-9]?)$")
+//
+//            if pattern.match(strng):
+//            return True
+//    else:
+//            return False
+    //6KYU
+    //PYTHON
+//    def nth_fibonacci(n):
+//    num0 = 0
+//    num1 = 1
+//            if n <= 1:
+//            return num0
+//    else:
+//            for num in range(2,n):
+//    num3 = num0 + num1
+//            num0 = num1
+//    num1 = num3
+//        return num1
 }
