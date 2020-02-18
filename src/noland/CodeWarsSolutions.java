@@ -295,4 +295,16 @@ public class CodeWarsSolutions {
 //            num0 = num1
 //    num1 = num3
 //        return num1
+    //5KYU
+    //Python
+//    def moving_zeros_to_the_end(array):
+//            for i, elem in enumerate(array):
+//            if elem is False:
+//    array[i] = "False"
+//            if elem is 0:
+//            array.append(array.pop(array.index(elem)))
+//            for i, elem in enumerate(array):
+//            if elem == "False":
+//    array[i] = False
+//    return array
 }
