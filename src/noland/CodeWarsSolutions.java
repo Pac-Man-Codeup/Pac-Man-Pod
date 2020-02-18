@@ -1,8 +1,6 @@
 package noland;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class CodeWarsSolutions {
     //6KYU
@@ -245,33 +243,56 @@ public class CodeWarsSolutions {
 //        }
 //        return true;
 //    }
-//    //6KYU Needs Refactor
-//    public static boolean areTheyTheSame(int[] a, int[] b) {
-//        if(a == null || b == null || a.length != b.length){
-//            return false;
-//        }
-//        for(int i = 0; i < a.length; i++) {
-//            a[i] = a[i] * a[i];
-//        }
-//        for(int num : a) {
-//            System.out.println(num);
-//        }
-//        for(int num : b) {
-//            System.out.println(num);
-//        }
-//        List<Integer> aList = Arrays.stream(a).boxed().collect(Collectors.toList());
-//        List<Integer> bList = Arrays.stream(b).boxed().collect(Collectors.toList());
-//        for(Integer num : aList) {
-//            if(!bList.contains(num)) {
-//                return false;
-//            }
-//        }
-//        for(Integer num : bList) {
-//            if(!aList.contains(num)) {
-//                return false;
-//            }
-//            aList.remove(num);
-//        }
-//        return true;
-//    }
+    //6KYU Needs Refactor Check to MAKE SURE THIS IS THE CORRECT ONE
+    public static boolean areTheyTheSame(int[] a, int[] b) {
+        if(a == null || b == null || a.length != b.length){
+            return false;
+        }
+        for(int i = 0; i < a.length; i++) {
+            a[i] = a[i] * a[i];
+        }
+        for(int num : a) {
+            System.out.println(num);
+        }
+        for(int num : b) {
+            System.out.println(num);
+        }
+        List<Integer> aList = Arrays.stream(a).boxed().collect(Collectors.toList());
+        List<Integer> bList = Arrays.stream(b).boxed().collect(Collectors.toList());
+        for(Integer num : aList) {
+            if(!bList.contains(num)) {
+                return false;
+            }
+        }
+        for(Integer num : bList) {
+            if(!aList.contains(num)) {
+                return false;
+            }
+            aList.remove(num);
+        }
+        return true;
+    }
+    //6KYU
+    //PYTHON
+//    import re
+//    def ip_validation(strng):
+//    pattern = re.compile("^(?:(?:25[0-5]|2[0-4][0-9]|[1]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[1]?[0-9][0-9]?)$")
+//
+//            if pattern.match(strng):
+//            return True
+//    else:
+//            return False
+    //6KYU
+    //PYTHON
+//    def nth_fibonacci(n):
+//    num0 = 0
+//    num1 = 1
+//            if n <= 1:
+//            return num0
+//    else:
+//            for num in range(2,n):
+//    num3 = num0 + num1
+//            num0 = num1
+//    num1 = num3
+//        return num1
 }
