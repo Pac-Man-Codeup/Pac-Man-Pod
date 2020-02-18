@@ -211,4 +211,67 @@ public class CodeWarsSolutions {
 //    //Python
 //    def array_diff(a, b):
 //                return [num for num in a if num not in b]
+
+//    //Java Continued
+//    public static boolean comp(int[] a, int[] b) {
+//        if(a == null || b == null || a.length != b.length) {
+//            return false;
+//        }
+//        Arrays.sort(a);
+//        Arrays.sort(b);
+//        int i = 0;
+//        for(int num : a) {
+//            num = num * num;
+//            if(b[i] != num) {
+//                System.out.println("i = " + i);
+//                System.out.println(b[i]);
+//                System.out.println(num);
+//                return false;
+//            }
+//            i++;
+//        }
+//        return true;
+//    }
+//    public static boolean comp(int[] a, int[] b) {
+//        if(a == null || b == null || a.length != b.length){
+//            return false;
+//        }
+//        List<Integer> bList = Arrays.stream(b).boxed().collect(Collectors.toList());
+//        for(int num : a) {
+//            num = num * num;
+//            if(bList.indexOf(num) == -1) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+//    //6KYU Needs Refactor
+//    public static boolean areTheyTheSame(int[] a, int[] b) {
+//        if(a == null || b == null || a.length != b.length){
+//            return false;
+//        }
+//        for(int i = 0; i < a.length; i++) {
+//            a[i] = a[i] * a[i];
+//        }
+//        for(int num : a) {
+//            System.out.println(num);
+//        }
+//        for(int num : b) {
+//            System.out.println(num);
+//        }
+//        List<Integer> aList = Arrays.stream(a).boxed().collect(Collectors.toList());
+//        List<Integer> bList = Arrays.stream(b).boxed().collect(Collectors.toList());
+//        for(Integer num : aList) {
+//            if(!bList.contains(num)) {
+//                return false;
+//            }
+//        }
+//        for(Integer num : bList) {
+//            if(!aList.contains(num)) {
+//                return false;
+//            }
+//            aList.remove(num);
+//        }
+//        return true;
+//    }
 }
