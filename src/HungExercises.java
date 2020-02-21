@@ -40,7 +40,7 @@ public class HungExercises {
         System.out.println(isVowel("ou"));
         System.out.println(isVowel("z"));
         System.out.println(isVowel("lol"));*/
-        int clues[][] = {
+       /* int clues[][] = {
                 {2, 2, 1, 3,
                         2, 2, 3, 1,
                         1, 2, 2, 3,
@@ -73,7 +73,79 @@ public class HungExercises {
                 2, 2, 3, 1,
                 1, 2, 2, 3,
                 3, 2, 1, 3};
-        solvePuzzle(clue1);
+        solvePuzzle(clue1);*/
+//        System.out.println(number(Arrays.asList("a", "b", "c")));
+//        System.out.println(number(Arrays.asList("", "", "", "", "")));
+
+//        System.out.println(duplicateCount("indivisibility"));
+//        System.out.println(duplicateCount("abcdea"));
+//        System.out.println(duplicateCount("abcde"));
+
+        System.out.println(divide(2));
+        System.out.println(divide(3));
+        System.out.println(divide(4));
+        System.out.println(divide(5));
+        System.out.println(divide(6));
+    }
+    /*It's too hot, and they can't even…
+    One hot summer day Pete and his friend Billy decided to buy watermelons. They chose the biggest crate. They rushed home, dying of thirst, and decided to divide their loot, however they faced a hard problem.
+    Pete and Billy are great fans of even numbers, that's why they want to divide the number of watermelons in such a way that each of the two parts consists of an even number of watermelons. However, it is not obligatory that the parts are equal.
+    Example: the boys can divide a stack of 8 watermelons into 2+6 melons, or 4+4 melons.
+    The boys are extremely tired and want to start their meal as soon as possible, that's why you should help them and find out, whether they can divide the fruits in the way they want. For sure, each of them should get a part of positive weight.
+    Task
+    Given an integral number of watermelons w (1 ≤ w ≤ 100; 1 ≤ w in Haskell), check whether Pete and Billy can divide the melons so that each of them gets an even amount.
+    Examples
+    divide(2) == false // 2 = 1 + 1
+    divide(3) == false // 3 = 1 + 2
+    divide(4) == true  // 4 = 2 + 2
+    divide(5) == false // 5 = 2 + 3
+    divide(6) == true  // 6 = 2 + 4*/
+    public static boolean divide(int weight) {
+        return ((weight % 2) == 0) && weight != 2;
+    }
+
+    /*Count the number of Duplicates
+    Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+    Example
+    "abcde" -> 0 # no characters repeats more than once
+    "aabbcde" -> 2 # 'a' and 'b'
+    "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+    "indivisibility" -> 1 # 'i' occurs six times
+    "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+    "aA11" -> 2 # 'a' and '1'
+    "ABBA" -> 2 # 'A' and 'B' each occur twice*/
+    public static int duplicateCount(String text) {
+        int count = 0;
+        char ch;
+        text = text.toLowerCase();
+        List<Character> doubles = new ArrayList<>();
+        for (char c : text.toCharArray()) {
+            ch = Character.toLowerCase(c);
+            if ((text.indexOf(ch) != text.lastIndexOf(ch)) && !doubles.contains(ch)) {
+                doubles.add(ch);
+                count++;
+            }
+        }
+        return count;
+    }
+
+    /*Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.
+    Write a function which takes a list of strings and returns each line prepended by the correct number.
+    The numbering starts at 1. The format is n: string. Notice the colon and space in between.
+    Examples:
+    number(Arrays.asList()) # => []
+    number(Arrays.asList("a", "b", "c")) // => ["1: a", "2: b", "3: c"]*/
+    public static List<String> number(List<String> lines) {
+        // TODO
+        int index = 1;
+        String itemMarkup;
+        List<String> returnList = new ArrayList<>();
+        for (String item : lines) {
+            itemMarkup = String.format("%d: %s", index, item);
+            returnList.add(itemMarkup);
+            index++;
+        }
+        return returnList;
     }
 
     static int[][] solvePuzzle(int[] clues) {
