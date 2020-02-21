@@ -11,7 +11,12 @@ public class Kata {
 //        System.out.println(zeroFuel(100, 50, 1)); // false
 
         System.out.println(expressionsMatter(1, 2, 3));
+
         System.out.println(nearestSq(17));
+
+        System.out.println(leo(86));
+        System.out.println(leo(88));
+        System.out.println(leo(87));
 
     }
 
@@ -60,6 +65,24 @@ public class Kata {
         return Math.max(Math.max(a + b + c, a * b * c), Math.max((a + b) * c, a * (b + c)));
     }
 
+// TODO if oscar was (integer) 88, you have to return "Leo finally won the oscar! Leo is happy". if oscar was 86, you have to return "Not even for Wolf of wallstreet?!" if it was not 88 or 86 (and below 88) you should return "When will you give Leo an Oscar?" if it was over 88 you should return "Leo got one already!"
+
+    static String leo(int oscar) {
+        if (oscar == 88) return "Leo finally won the oscar! Leo is happy";
+        else if (oscar == 86) return "Not even for Wolf of wallstreet?!";
+        else if (oscar < 88) return "When will you give Leo an Oscar?";
+        else return "Leo got one already!";
+    }
+
+    // TODO Add two logs with base X, with the value of A and B. Example log A + log B where the base is X.
+
+    // Math.log() method returns the natural logarithm (base e) of a double value as a parameter.
+
+    static double logs(double x, double a, double b) {
+        return Math.log(a * b) / Math.log(x);
+    }
+
+
     // TODO Your task is to find the nearest square number, nearest_sq(n), of a positive integer n.
 
     //https://www.codewars.com/kata/find-nearest-square-number
@@ -67,4 +90,5 @@ public class Kata {
     static int nearestSq(int n) {
         return (int) Math.pow(Math.round(Math.sqrt(n)), 2);
     }
+
 }
