@@ -58,13 +58,6 @@ public class Kata {
 //            System.out.format("%s year is a not a leap year", inputYear);
 //    }
 
-    // TODO Given three integers a ,b ,c, return the largest number obtained after inserting the following operators and brackets: +, *, ().
-//    https://www.codewars.com/kata/expressions-matter
-
-    static int expressionsMatter(int a, int b, int c) {
-        return Math.max(Math.max(a + b + c, a * b * c), Math.max((a + b) * c, a * (b + c)));
-    }
-
 // TODO if oscar was (integer) 88, you have to return "Leo finally won the oscar! Leo is happy". if oscar was 86, you have to return "Not even for Wolf of wallstreet?!" if it was not 88 or 86 (and below 88) you should return "When will you give Leo an Oscar?" if it was over 88 you should return "Leo got one already!"
 
     static String leo(int oscar) {
