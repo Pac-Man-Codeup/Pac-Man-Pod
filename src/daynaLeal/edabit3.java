@@ -13,6 +13,9 @@ public class edabit3 {
         System.out.println(squarePatch(5));
         System.out.println(squarePatch(1));
         System.out.println(squarePatch(0));
+
+        //3
+        System.out.println(disemvowel("This is my test string."));
     }
 
     //1
@@ -62,5 +65,19 @@ public class edabit3 {
             }
         }
         return arrayArray;
+    }
+
+    //3
+    //Trolls are attacking your comment section.
+    //A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+    //Your task is to write a function that takes a string and return a new string with all vowels removed.
+    //For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+    //Note: for this kata y isn't considered a vowel.
+    public static String disemvowel(String str) {
+//        for (int i = 0; i < str.length(); i++) {
+//            if (str.charAt(i) =)
+//        }
+        str = str.replaceAll("[AaEeIiOoUu]", "");
+        return str;
     }
 }
