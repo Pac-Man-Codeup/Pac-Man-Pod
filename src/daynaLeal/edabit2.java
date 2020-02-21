@@ -9,7 +9,7 @@ public class edabit2 {
         //1
         int[] test1 = {10, 4, 1, 4, -10, -50, 32, 21};
         int[] test2 = {44, 32, 86, 19};
-        System.out.println(differenceMaxMin(test1)); //82 examplest taken from edabit
+        System.out.println(differenceMaxMin(test1)); //82 examples taken from edabit
         System.out.println(differenceMaxMin(test2)); //67
 
         //2
