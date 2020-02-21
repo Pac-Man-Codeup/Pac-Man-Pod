@@ -210,39 +210,7 @@ public class CodeWarsSolutions {
 //    def array_diff(a, b):
 //                return [num for num in a if num not in b]
 
-//    //Java Continued
-//    public static boolean comp(int[] a, int[] b) {
-//        if(a == null || b == null || a.length != b.length) {
-//            return false;
-//        }
-//        Arrays.sort(a);
-//        Arrays.sort(b);
-//        int i = 0;
-//        for(int num : a) {
-//            num = num * num;
-//            if(b[i] != num) {
-//                System.out.println("i = " + i);
-//                System.out.println(b[i]);
-//                System.out.println(num);
-//                return false;
-//            }
-//            i++;
-//        }
-//        return true;
-//    }
-//    public static boolean comp(int[] a, int[] b) {
-//        if(a == null || b == null || a.length != b.length){
-//            return false;
-//        }
-//        List<Integer> bList = Arrays.stream(b).boxed().collect(Collectors.toList());
-//        for(int num : a) {
-//            num = num * num;
-//            if(bList.indexOf(num) == -1) {
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
+
     //6KYU Needs Refactor Check to MAKE SURE THIS IS THE CORRECT ONE
     public static boolean areTheyTheSame(int[] a, int[] b) {
         if(a == null || b == null || a.length != b.length){
@@ -250,12 +218,6 @@ public class CodeWarsSolutions {
         }
         for(int i = 0; i < a.length; i++) {
             a[i] = a[i] * a[i];
-        }
-        for(int num : a) {
-            System.out.println(num);
-        }
-        for(int num : b) {
-            System.out.println(num);
         }
         List<Integer> aList = Arrays.stream(a).boxed().collect(Collectors.toList());
         List<Integer> bList = Arrays.stream(b).boxed().collect(Collectors.toList());
@@ -295,4 +257,21 @@ public class CodeWarsSolutions {
 //            num0 = num1
 //    num1 = num3
 //        return num1
+    //5KYU
+    //Python
+//    def moving_zeros_to_the_end(array):
+//            for i, elem in enumerate(array):
+//            if elem is False:
+//    array[i] = "False"
+//            if elem is 0:
+//            array.append(array.pop(array.index(elem)))
+//            for i, elem in enumerate(array):
+//            if elem == "False":
+//    array[i] = False
+//    return array
+    //7KYU
+    public static String disemvowelTrolls(String str) {
+        str = str.replaceAll("[aeiouAEIOU]", "");
+        return str;
+    }
 }
