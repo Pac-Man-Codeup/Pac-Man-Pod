@@ -210,39 +210,7 @@ public class CodeWarsSolutions {
 //    def array_diff(a, b):
 //                return [num for num in a if num not in b]
 
-//    //Java Continued
-//    public static boolean comp(int[] a, int[] b) {
-//        if(a == null || b == null || a.length != b.length) {
-//            return false;
-//        }
-//        Arrays.sort(a);
-//        Arrays.sort(b);
-//        int i = 0;
-//        for(int num : a) {
-//            num = num * num;
-//            if(b[i] != num) {
-//                System.out.println("i = " + i);
-//                System.out.println(b[i]);
-//                System.out.println(num);
-//                return false;
-//            }
-//            i++;
-//        }
-//        return true;
-//    }
-//    public static boolean comp(int[] a, int[] b) {
-//        if(a == null || b == null || a.length != b.length){
-//            return false;
-//        }
-//        List<Integer> bList = Arrays.stream(b).boxed().collect(Collectors.toList());
-//        for(int num : a) {
-//            num = num * num;
-//            if(bList.indexOf(num) == -1) {
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
+
     //6KYU Needs Refactor Check to MAKE SURE THIS IS THE CORRECT ONE
     public static boolean areTheyTheSame(int[] a, int[] b) {
         if(a == null || b == null || a.length != b.length){
