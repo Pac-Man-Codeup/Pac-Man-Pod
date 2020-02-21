@@ -88,7 +88,7 @@ public class Kata {
     //https://www.codewars.com/kata/find-nearest-square-number
 
     static int nearestSq(int n) {
-        return (int) Math.pow(Math.round(Math.sqrt(n)), 2);
+        int base = (int) Math.round(Math.sqrt(n));
+        return base * base;
     }
-
 }
