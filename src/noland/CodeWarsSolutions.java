@@ -251,12 +251,6 @@ public class CodeWarsSolutions {
         for(int i = 0; i < a.length; i++) {
             a[i] = a[i] * a[i];
         }
-        for(int num : a) {
-            System.out.println(num);
-        }
-        for(int num : b) {
-            System.out.println(num);
-        }
         List<Integer> aList = Arrays.stream(a).boxed().collect(Collectors.toList());
         List<Integer> bList = Arrays.stream(b).boxed().collect(Collectors.toList());
         for(Integer num : aList) {
